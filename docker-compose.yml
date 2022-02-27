@@ -13,17 +13,29 @@ services:
         - "8080:80"
       restart: always
 
-  redis:
-      image: redis:latest
-      container_name: redis
-      ports:
-        - "6379:6379"
-      mem_limit: 128m
-      networks:
-        - madrobot
-      restart: always
+  # redis:
+  #     image: redis:latest
+  #     container_name: redis
+  #     ports:
+  #       - "6379:6379"
+  #     mem_limit: 128m
+  #     networks:
+  #       - madrobot
+  #     restart: always
+
+  # edgedb:
+  #   image: edgedb/edgedb
+  #   environment:
+  #     EDGEDB_SERVER_SECURITY: insecure_dev_mode
+  #   volumes:
+  #     - "./config/edgedb:/dbschema"
+  #     - "./data/edgedb:/var/lib/edgedb/data"
+  #   ports:
+  #     - "5656"
 
 networks:
   madrobot:
     driver: bridge
     name: madrobot
+
+  

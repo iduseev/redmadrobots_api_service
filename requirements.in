@@ -4,3 +4,4 @@ uvicorn
 webpreview
 redis
 aiofiles
+edgedb
